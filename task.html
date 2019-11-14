@@ -1,0 +1,1084 @@
+<!-- BEGIN -->
+<!-- Jquery and Google Chart Library -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- END  -->
+
+<!-- LIBRERIE -->
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- CSS -->
+<style type="text/css">
+
+</style>
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<!-- Corpo HTML -->
+<crowd-form answer-format="flatten-objects">
+    
+    <div id="myPage" class="container"><!-- geography .. -->
+    
+      <div id="geo">
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter">
+          View instructions
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Instructions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+               <!-- Istruzioni S6 -->
+                <h5>Please read carefully the Instructions above before starting the task.</h5>
+                <br />
+                <p>In this task, you will be asked to assign numeric scores to a set of paragraphs to indicate the <strong>truth level</strong> of such statement. </p>
+                <h3><strong>Introduction</strong></h3>
+                <p>We will show you <b>8 statements</b> (collected primarily from 2007 to 2016) by popular people (for example, political figures) together with information about who made the statement and in which context.</p>
+                <p>For each statement, we ask you to tell us its "truth level", that is, how much you think the statement represents reality; how reliable it is. <b>There are six truth levels</b>: Lie, False, Barely True, Half True, Mostly True and True. You should assign the label corresponding to the stimulus magnitude you see.</p>
+                <p>You can interpret the labels as follows: </p>
+                <p><ul>
+                    	<li class="elemento"><b>True</b>: The statement is accurate and there’s nothing significant missing.</li>
+                        <li class="elemento"><b>Mostly True</b>: The statement is accurate but needs clarification or additional information.</li>
+                        <li class="elemento"><b>Half True</b>: The statement is partially accurate but leaves out important details or takes things out of context.</li>
+                        <li class="elemento"><b>Barely True</b>: The statement contains an element of truth but ignores critical facts that would give a different impression.</li>
+                        <li class="elemento"><b>False</b>: The statement is not accurate.</li>
+                        <li class="elemento"><b>Pants On Fire</b>: The statement is not accurate and makes a ridiculous claim.</li>
+                    </ul>
+                </p>
+                <p>You will be also asked to provide a <b>valid</b> URL you found to motivate your choice and, for each statement, you should provide a <b>brief justification</b>.</p>
+                <p>Mind that all the expected inputs are required and you can't go to the next statement if you don't correctly fill all the above.</p>
+                <p>Please read these instructions carefully before deciding whether to complete the task. Note that there are some checks throughout the task, and if you do not perform these correctly you will not be able to terminate and get paid. The data from this task is being gathered for research purposes. No personally identifying information is recorded. Participation is entirely voluntary, and you are free to discontinue at any point.</p>
+                <h3><strong>Task description</strong></h3>
+                <p>First, you will be asked to answer some questions that will help us to collect more sound and reliable data.</p>
+                <p>You will then be asked to rate 8 statement, that have been expressed by a person in a given context. You will be shown the 8 statements, one at a time. For each statement, your task will be asked to establish the truth and validity choosing one from the six options. If you wish to correct a mistake, then you can use the back button to revisit a previous judgment.</p>
+                <p>The statements are not presented in any particular order. You might see many good statements, many bad ones, or any combination. Try not to anticipate, and simply rate each statement after reading it. Don't try to guess or randomly click, as there are some cross-checks, as indicated above.</p>
+
+              </div>
+              <div class="modal-footer">
+                <a href="" target="_blank" class="btn btn-warning">Information Sheet</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Questionario -->
+        <div style="text-align:left;padding-top:2em;">
+          <h5>We will now ask you some demographic questions that will help us to improve the quality of our results.</h5>
+        </div>
+        <br />
+        
+        <!-- Sex -->
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><b>What is your gender?</b></p>
+            <div class="card-text form-group">
+                <div class="form-check">
+                    <input id="gender1" class="form-check-input elemento" type="radio" name="gender" value="1"> 
+                    <label class="form-check-label label" for="gender1">Male</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="gender2" class="form-check-input elemento" type="radio" name="gender" value="2">
+                    <label class="form-check-label label" for="gender2">Female</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="gender3" class="form-check-input elemento" type="radio" name="gender" value="3">
+                    <label class="form-check-label label" for="gender3">Other/No answer</label><br />
+                </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        
+        <!-- Age -->
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><b>What is your age range?</b></p>
+            <div class="card-text form-group">
+                <div class="form-check">
+                    <input id="age1" class="form-check-input elemento" type="radio" name="age" value="1"/>
+                    <label class="form-check-label label" for="age1">0-18 </label><br />
+                </div>
+                <div class="form-check">
+                    <input id="age2" class="form-check-input elemento" type="radio" name="age" value="2"/>
+                    <label class="form-check-label label" for="age2">19-25</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="age3" class="form-check-input elemento" type="radio" name="age" value="3"/> 
+                    <label class="form-check-label label" for="age3">26-35</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="age4" class="form-check-input elemento" type="radio" name="age" value="4"/>
+                    <label class="form-check-label label" for="age4">36-50</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="age5" class="form-check-input elemento" type="radio" name="age" value="5"/>
+                    <label class="form-check-label label" for="age5">50-80</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="age6" class="form-check-input elemento" type="radio" name="age" value="6"/>
+                    <label class="form-check-label label" for="age6">>80</label><br />
+                </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        
+        <!-- School -->
+        <div class="card">
+          <div class="card-body">
+            <p class="card-title"><b>What is the highest level of school you have completed or the highest degree you have received?</b></p>
+            <div class="card-text form-group">
+                <div class="form-check ">
+                    <input id="school1" class="form-check-input elemento" type="radio" name="school" value="1"/> 
+                    <label class="form-check-label label" for="school1">High school incomplete or less</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="school2" class="form-check-input elemento" type="radio" name="school" value="2"/> 
+                    <label class="form-check-label label" for="school2">High school graduate or GED (includes technical/vocational training that doesn’t count towards college credit)</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="school3" class="form-check-input elemento" type="radio" name="school" value="3"/> 
+                    <label class="form-check-label label" for="school3">Some college (some community college, associate’s degree)</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="school4" class="form-check-input elemento" type="radio" name="school" value="4"/> 
+                    <label class="form-check-label label" for="school4">Four year college degree/bachelor’s degree</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="school5" class="form-check-input elemento" type="radio" name="school" value="5"/> 
+                    <label class="form-check-label label" for="school5">Some postgraduate or professional schooling, no postgraduate degree</label><br />
+                </div>
+                <div class="form-check">
+                    <input id="school6" class="form-check-input elemento" type="radio" name="school" value="6"/> 
+                    <label class="form-check-label label" for="school6">Postgraduate or professional degree, including master’s, doctorate, medical or law degree</label><br />
+                </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        </div>
+        
+        <div id="task_page">
+            <div>
+            <crowd-image-classifier 
+        src="https://kevinr.s3.us-east-2.amazonaws.com/ex/1.jpg"
+        categories="['Cat', 'Dog', 'Bird', 'None of the Above']"
+        header="Choose the correct category"
+        name="category">
+
+       <!-- Use the short-instructions section for quick instructions that the Worker
+              will see while working on the task. Including some basic examples of 
+              good and bad answers here can help get good results. You can include 
+              any HTML here. -->
+        <short-instructions>
+            <p>Read the task carefully and inspect the image.</p>
+            <p>Choose the appropriate label that best suits the image.</p>
+        </short-instructions>
+
+        <!-- Use the full-instructions section for more detailed instructions that the 
+              Worker can open while working on the task. Including more detailed 
+              instructions and additional examples of good and bad answers here can
+              help get good results. You can include any HTML here. -->
+        <full-instructions header="Classification Instructions">
+            <p>Read the task carefully and inspect the image.</p>
+            <p>Choose the appropriate label that best suits the image.</p>
+        </full-instructions>
+        
+        
+
+    </crowd-image-classifier>
+            </div>
+            </div>
+            
+  
+
+       <!-- Pulsanti di Navigazione -->
+        <div id="btnBox">
+            <div id="btnBack" class="btn btn-dark">Back</div>
+            <div id="btnNext" class="btn btn-dark">Next</div>
+            <br /><br /><hr>
+        </div>
+     
+      <!-- Error | Retry -->
+      <div id="errorBox" style="text-align:center;">
+        <h1>Sorry,</h1>
+        <h2>Your work was not accurate enough.</h2>
+        <h2>You are not allowed to continue this task.</h2>
+      </div>
+      <div id="RetryBox" style="text-align:center;">
+        <h1>Sorry,</h1>
+        <h2>Your work was not accurate enough.</h2>
+        <h2>You are allowed to retry this task.</h2>
+        <div id="btnRetry" class="btn btn-warning">Retry</div>
+      </div>
+    
+      <div id="endBox" style="text-align:center;">
+        <h1>:-)</h1>
+        <h2>Congratulations. You reached the end. Click Submit to finish the task.</h2>
+        <!-- Final Submit -->
+        <button id="submitButton" class="btn btn-success" type="submit" value="submit" onsubmit="return checkform(this);">
+            Submit
+        </button>
+      </div>
+    
+    </div><!-- end of mypage tag -->
+    
+    
+    
+    
+   
+    
+
+</crowd-form>
+
+<!-- Mio codice JS -->
+<script>
+    MODALITA = "S6";
+    //MODALITA = "S100";
+    
+    // Conteggio fallimenti concessi. Max 10
+    var failure = 0;
+    MAX_FAILURE = 5;
+    
+    // Passi Questionario
+    var step = 0;
+    var gotostep = -1;
+    
+    var label = [];
+    var slider = [];
+    
+    var visibility = true; // true = visible, false = hidden
+    
+    // Numero totale statements | 6 + 2
+    var no_docs = 8;
+    
+    // Array di giudizi e giustificazioni worker
+    var judgments = [];
+    var justifications = [];
+    var urls = [];
+    var offPageInfo = []; // Info in merito al numero di volte in cui un utente abbandola la pagina corrente
+    
+    // check shift array
+    var shifted = false;
+    
+    var doc_start_time = Date();
+    var times = [];
+    for (i = 1; i <= no_docs; i++){
+        times[i] = 0;
+        judgments[i] = 50;
+    }
+    SOGLIA_TIME = 5;
+    
+    var steps = [];
+    
+    // Risposte questionario
+    var risposta_gender = -1;
+    var risposta_age = -1;
+    var risposta_school = -1;
+    //var risposta_income = -1;
+    //var risposta_party = -1;
+    //var risposta_partyln = -1;
+    //var risposta_ideo = -1;
+    //var risposta_elections = -1;
+    //var risposta_teaparty = -1;
+    
+    // Info Worker
+    var hit_id = -1;
+    var assignment_id = -1;
+    var ip_address = -1;
+    
+    // Info singola domanda
+    var id_par = [];
+    var name = [];
+    var statement =[];
+    var speaker = [];
+    var job = [];
+    var context = [];
+    
+    var hidden_field = "";
+    
+    // Session ID
+    const session_id = Math.random().toString(36).substring(0,10);
+
+    
+    function checkform(envir){
+        $("#text_result").value = 'fine';
+        var stt = "assignmentId=ASSIGNMENT_ID_NOT_AVAILABLE&foo=bar";
+        //alert(stt);
+        $("BODY").empty();
+        cont = $("<div>").addClass("containter").html("FINE.")
+        $("BODY").append(cont)
+        $("BODY").css("color", "black").css("background-color", "white").css("text-align", "center")
+        return "t";
+    }
+    
+    // Prendo l'IP
+    $.getJSON("https://api.ipify.org/?format=json", function(e) {
+        //console.log(e.ip);
+        ip_address = e.ip;
+    });
+    
+    // Salvataggio info worker e contestuali
+    function logga(alla_fine=false, verbose=false){
+        //console.log('loggo.');
+        var final_log = {
+            
+            // Worker data
+            "session_id": session_id,
+            "assignment_id": assignment_id,
+            "hit_id": hit_id,
+            "ip_address": ip_address,
+            
+            "id_unit": id_unit,
+            "time": Date.now(),
+            "step": step,
+            
+            // Domande questionario iniziale
+            "questions" : {
+                "question_gender": risposta_gender , 
+                "question_age": risposta_age ,
+                "question_school": risposta_school,
+                //"question_income": risposta_income,
+                //"question_party": risposta_party,
+                //"question_partyln": risposta_partyln,
+                //"question_ideo": risposta_ideo,
+                //"question_elections": risposta_elections,
+                //"question_teaparty": risposta_teaparty,
+            },
+            
+            // Giudizi, giustificazioni e URL
+            "judgments": judgments,
+            "justifications": justifications,
+            "urls": urls,
+            
+            // Metadati
+            "times": times,
+            "failures": failure,
+            "steps": steps,
+            "off_page_count": offPageInfo,
+            
+            // Gold Questions
+            "pos_high": $("#high").val(),
+            "pos_low": $("#low").val(),
+            
+            // Mode
+            "kind_job": MODALITA,
+            };
+            //Se serve fai encodeURIComponet()
+            final_log_stringifato = JSON.stringify(final_log);
+            
+            // Log
+            // send_log("custom_fake_news_th", "json_log", final_log);
+            
+            // RIGA DI PROVA
+            setHiddenField(final_log_stringifato);
+            
+            if (alla_fine){
+                var result = final_log_stringifato;
+                $("#text_result").value = result;
+            }
+            if (verbose){
+                console.log( final_log_stringifato );
+            }  
+    }
+    // FUNZIONE DI PROVA
+    function setHiddenField(value){
+        $("#text_result").val(value);
+    }
+    
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    
+    // Nascondo tutti i passi, all'inizio
+        function hideAll() {
+            $("#scrematura").hide();
+            $("#task_page").hide();
+            $("#geo").hide();
+            
+            $("#RetryBox").hide();
+            $("#errorBox").hide();
+            $("#endBox").hide();
+            $("#btnBox").hide();
+        }
+        
+        //Mostra o nasconde il bottone finale per concludere il task
+        function showEnd(show) {
+            if (show) {
+            $("input[type='submit']").show();
+            $("input[type='submit']").prop('disabled', false);
+            } else {
+                $("input[type='submit']").hide();
+                $("input[type='submit']").prop('disabled', true);
+            }
+        }
+        
+        function onlyUnique(value, index, self) { 
+            return self.indexOf(value) === index;
+        }
+        
+        // Conclusione nel caso non soddisfi i requisiti di qualità
+        function finishBad(){
+            hideAll();
+            $("#btnNext").hide();
+            $("#errorBox").show();
+        }
+        
+        // Check su gold questions
+        function check_highlow(){
+            var low = $("#low").val();
+            var lowtask = parseFloat(judgments[low]);
+            
+            var high = $("#high").val();
+            var hightask = parseFloat(judgments[high]);
+            
+            if (lowtask >= hightask){
+                console.log("high_low_violated_low_is"+lowtask+"_high_is_"+hightask);
+                return false;
+            }else{
+                return true;
+            }
+            
+        }
+        
+        // Check su tempo impiegato
+        function check_time(){
+            var sbagliato = 0;
+            for (i=1; i<=no_docs; i++){
+                if (times[i] < SOGLIA_TIME){
+                    sbagliato +=1;
+                }
+            }
+            if (sbagliato > 0){
+                console.log("document_time_violated_" + sbagliato + "times");
+                return false;
+            }else{
+                return true;
+            }
+        }
+        
+        // Check su numero di parole inserite
+        function check_nowords(){
+            var words_count = 0;
+            for (var z1 = 1; z1 < 4; z1++){
+                var nowords = $("#" + z1 + "qv").val().split(' ').length;
+                if (nowords < 2){
+                    words_count +=1;
+                }
+            }
+            if (words_count >0){
+                alert('A valid query shold contain at least 2 words');
+                errorArray.push('not_enough_words');
+                return false;
+            }else{
+                return true;
+            }
+        }
+        
+        function validURL() {
+            var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+            if(!regex .test($("#url").val())) {
+                // No Good
+                return false;
+            } else {
+                url[step] = $("#url").val();
+                return true;
+            }
+        }
+        
+        function check_isanumber(){
+            if(MODALITA === "S100"){
+                var text = $("#rel").val();
+                // Controllo che non siano lettere
+                var isnum = /^\d+$/.test(text);
+                if (isnum === false){
+                    // No Good
+                    return false;
+                }
+            }
+        }
+        
+        function check_filled(){
+            switch(MODALITA){
+            case "S100":
+                if (($('#url').val().length === 0) || ($('#reljust').val().length === 0)){
+                    // No Good
+                    return false;
+                }else{
+                    return true;
+                }
+                break;
+            case "S6":
+                if (($('#url').val().length === 0) || (!label[step]) || ($('#reljust').val().length === 0)){
+                    // No Good
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        }
+        
+        // Verifico che l'utente abbia risposto a questionario iniziale
+        function check_inzio(){
+            // Una Variabile per gruppo di radio button
+            var radio_age = $("input[name='age']");
+            var radio_gender = $("input[name='gender']");
+            var radio_school = $("input[name='school']");
+            //var radio_income = $("input[name='income']");
+            //var radio_party = $("input[name='party']");
+            //var radio_partyln = $("input[name='partyln']");
+            //var radio_ideo = $("input[name='ideo']");
+            //var radio_elections = $("input[name='elections']");
+            //var radio_teaparty = $("input[name='teaparty']");
+            
+            // Verifico che almeno una opzione per gruppo sia stata selezionata
+            if( radio_age.filter(':checked').length == 0    || radio_gender.filter(':checked').length == 0   ||
+                radio_school.filter(':checked').length == 0 
+                
+                // || radio_income.filter(':checked').length == 0   ||
+                //radio_party.filter(':checked').length == 0  || radio_partyln.filter(':checked').length == 0  ||
+                //radio_ideo.filter(':checked').length == 0   || radio_elections.filter(':checked').length == 0||
+                //radio_teaparty.filter(':checked').length == 0 
+                ){
+                
+                alert("Please answer ALL Questions.")
+                return false;
+            } else {
+                console.log("Check sul questionario Ok")
+                return true;
+            }
+        }
+        // Verifica sulla lunghezza della giustificazione
+        function check_enoughtext(){
+            if (($('#reljust').val().length < 8)  ){
+                    //No Good
+                    return false;
+                }else{
+                    return true;
+                }
+        }
+        
+        // Check URL != Just
+        function check_difference_url_just(){
+            if ($('#reljust').val() === $('#url').val()){
+                // No Good
+                return false;
+            }else{
+                return true;
+            }
+        }
+        
+        // Check diverse Just | controllo finale
+        function check_different_just(){
+            var count = 0;
+            for (var i = 1; i < step-1; i++){ 
+                if(justifications[i] === justifications[i+1]){
+                    count++;
+                }
+            }
+            console.log("Count: " + count);
+            if(count <= 2){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+        // Verifico che l'utente interagisca con lo slider almeno la metà delle volte
+        function check_slider_interaction(){
+            var interaction = 0;
+            for (var i = 1; i < step-1; i++){ 
+                if(slider[i]){
+                    interaction = interaction + 1;
+                }
+            }
+            console.log("Slider interaction: " + interaction);
+            if(interaction >= (no_docs/2)){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        
+        // Check per ogni passo | Next = true | Back = false
+        function check_inputs(step, button){
+            switch (step) {
+                case 0:
+                    var controllonizio = true
+                    // Controllo input
+                    controllonizio = check_inzio();
+                    if (controllonizio === false){return false;}
+                    return true;
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    // Se vado avanti blocco il discorso se i dati non passano le validazioni
+                    var controllo = true
+                    if(button){
+                        /* Start controlli  non bloccanti  */
+                        // Controllo input
+                        controllo = check_filled();
+                        if (!controllo){
+                            alert('Please fill all the input boxes');
+                            return false;
+                        }
+                        // Controllo is valid URL
+                        controllo = validURL();
+                        if (!controllo){
+                            alert("Please enter a valid URL.");
+                            return false;
+                        }
+                        // Controllo lunghezza justification
+                        controllo = check_enoughtext();
+                        if (!controllo){
+                            alert('The justification is not long enough');
+                            return false;
+                        }
+                        // Controllo URL != justification
+                        controllo = check_difference_url_just();
+                        if (!controllo){
+                            alert('The Justification provided should be different than the URL!');
+                            return false;
+                        }
+                        /* End parte controlli   */
+                        
+                        // Salvo url
+                        urls[step] = $("#url").val();
+                        // Salvo justification
+                        justifications[step] = $("#reljust").val();
+                    }
+                    // Se torno indietro salvo quello che va bene, butto il resto
+                    else{
+                        if(validURL()){
+                            // Salvo url
+                            urls[step] = $("#url").val();
+                        }
+                        if(check_enoughtext() & check_difference_url_just()){
+                            // Salvo justification
+                            justifications[step] = $("#reljust").val();
+                        }
+                    }
+                    // Salvo il tempo
+                    doc_end_time = (new Date().getTime() - doc_start_time.getTime()) / 1000;
+                    times[step] += doc_end_time;
+                    
+                    console.log("Time spent on doc " + step + ": " + doc_end_time + " seconds.");
+                    console.log("Cumulative time on doc " + step + ": " + times[step] + "seconds.");
+                    return true;
+            }
+        }
+        
+        $("#btnNext").click(function(evt) {
+            $('body').scrollTop(0);
+            logga();
+            if (check_inputs(step, true)){
+                if (gotostep ===-1){
+                    step++;
+                    updateStep();
+                }else{
+                    step = gotostep;
+                    gotostep=-1;
+                    updateStep();
+                }
+            }
+        });
+        
+        $("#btnBack").click(function(evt) {
+            $('body').scrollTop(0);
+            logga();
+            if (check_inputs(step, false)){
+                if (gotostep === -1){
+                    step--;
+                    updateStep();
+                }else{
+                    step = gotostep;
+                    gotostep = -1;
+                    updateStep();
+                }
+            }
+        });
+        
+        $("#btnRetry").click(function(evt) {
+            step = 1;
+            updateStep();
+            switch(MODALITA){
+                    case "S6":
+                        $("input[name=rel][value='" + judgments[step] + "']").prop('checked', true);
+                        break; 
+                    }
+        });
+        
+        function controlloFinale(){
+            // Controllo finale
+            console.log("| Controlli Finali |");
+            var controllofin = true;
+            /* OGGETTI BLOCCANTI */
+            // Time constraint
+            controllofin = check_time();
+            if (!controllofin){return false;}
+            // low and high constraint
+            controllofin = check_highlow();
+            if (!controllofin){return false;}
+            // Diverse Just
+            controllofin = check_different_just();
+            if (!controllofin){return false;}
+            switch(MODALITA){
+                case "S100":
+                    // Slider interaction
+                    controllofin = check_slider_interaction();
+                    if (!controllofin){
+                        return false;
+                        
+                    }
+                    break;
+                case "S6":
+                    break; 
+            }
+            
+            return controllofin;
+        }
+        
+        function updateStep(){
+            switch (step) {
+                // Passo 0 | Questionario
+                case 0:
+                    steps.push(step);
+                    showEnd(false);
+                    hideAll();
+                    $("#geo").show();
+                    $("#btnBox").show();
+                    $("#btnBack").hide();
+                    $("#btnNext").hide();
+                    /* Age */
+                    $('input[type=radio][name=age]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_age = $('input[name=age]:checked').val(); 
+                        console.log("Current answer age:" + risposta_age);
+                        });
+                    /* Gender */
+                    $('input[type=radio][name=gender]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_gender = $('input[name=gender]:checked').val(); 
+                        console.log("Current answer gender:" + risposta_gender);
+                        });
+                    /* School */
+                    $('input[type=radio][name=school]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_school = $('input[name=school]:checked').val(); 
+                        console.log("Current answer school:" + risposta_school);
+                        });
+                    /* Income */
+                    $('input[type=radio][name=income]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_income = $('input[name=income]:checked').val(); 
+                        console.log("Current answer income:" + risposta_income);
+                        });     
+                    /* Party */
+                    $('input[type=radio][name=party]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_party = $('input[name=party]:checked').val(); 
+                        console.log("Current answer party:" + risposta_party);
+                        });  
+                    /* PartyLn */
+                    $('input[type=radio][name=partyln]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_partyln = $('input[name=partyln]:checked').val(); 
+                        console.log("Current answer partyln:" + risposta_partyln);
+                        });      
+                    /* Ideo */
+                    $('input[type=radio][name=ideo]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_ideo = $('input[name=ideo]:checked').val(); 
+                        console.log("Current answer ideo:" + risposta_ideo);
+                        });
+                    /* Elections */
+                    $('input[type=radio][name=elections]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_elections = $('input[name=elections]:checked').val(); 
+                        console.log("Current answer elections:" + risposta_elections);
+                        });   
+                    /* TeaParty */
+                    $('input[type=radio][name=teaparty]').on('change', function() {
+                        $("#btnNext").show();
+                        risposta_teaparty = $('input[name=teaparty]:checked').val(); 
+                        console.log("Current answer teaparty:" + risposta_teaparty);
+                        });
+                    break;
+                // Altri casi | Singoli statement
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                    steps.push(step);
+                    hideAll();
+                    $("#task_page").show();
+                    $("#btnBox").show();
+                    /* Bottone indietro  */
+                    if (step == 1){
+                        $("#btnBack").hide();
+                    }else{
+                        $("#btnBack").show();
+                    }
+                    /* Testo bottone */
+                    if (step == no_docs){
+                        $("#btnNext").html('Finish | Check Results');
+                    }else{
+                        $("#btnNext").html('Next');
+                    }
+                    // Titolo pagina
+                    $('#page_title').html("Statement " + step + " of " + no_docs);
+                    // Controllo se l'utente lascia la pagina solo quando serve
+                    checkVisibility();
+                    // Modalità
+                    switch (MODALITA){
+                        case "S100":
+                            $("#descqv").html("Please input the truth level for the above statement as a number in the [0,100] range");
+                            $("#rel_box_six").hide();
+                            $('input[type=range][name=rel]').on('click', function() {
+                                judgments[step] = $("#rel").val();
+                                slider[step] = true;
+                                console.log("Step:" + step + " Label:" + judgments[step]);
+                                console.log("Step:" + step + " | Bool: " + slider[step])
+                            });
+                            break;
+                        case "S6":
+                            console.log(step);
+                            //if(judgments[step]!== 1){
+                                // Ad ogni step faccio in modo che l'utente veda dei radiobutton unchecked
+                                $("input[type=radio][name=rel]").prop('checked', false);
+                            //}
+                            
+                            $("#descqv").html("Please input the truth level for the above statement as one from the six labels provided");
+                            $("#rel_box").hide();
+                            
+                            $('input[type=radio][name=rel]').on('change', function() {
+                                judgments[step] = $("input[name=rel]:checked").val();
+                                label[step] = true;
+                                
+                                console.log("Step:" + step + " Label:" + judgments[step]);
+                                console.log("Step:" + step + " | Bool: " + label[step]);
+                            });
+                            break;
+                }
+                
+                /* Fill Statement Info */
+                //id_par, name, statement, speaker, job, context 
+                //console.log('===== qui =====');
+                $("#statement").html( String(statement[step]) );
+                $("#speaker").html( String(speaker[step]) );
+                $("#job").html( String(job[step]) );
+                $("#context").html( String(context[step]) );
+                //console.log('===== qua =====');
+                
+                // Valore precedente url
+                if (url[step]!== null){
+                    $("#url").val(urls[step]);
+                }
+                // Valore precedente justification
+                if (justifications[step]!== null){
+                    $("#reljust").val(justifications[step]);
+                }
+                // Azzera tempo
+                doc_start_time = new Date();
+                break;
+                
+                case 9:
+                    steps.push(step);
+                    if (controlloFinale()){
+                        console.log('Controllo finale ok')
+                        if(!shifted){
+                            times.shift();
+                            urls.shift();
+                            judgments.shift();
+                            justifications.shift();
+                            shifted = true;
+                        }
+                        logga(alla_fine=true, verbose=true);
+                        step += 1
+                        updateStep();
+                    }else{
+                        console.log('Controllo finale retry')
+                        failure +=1
+                        if (failure>=MAX_FAILURE){
+                            console.log('see ya')
+                            finishBad()
+                        }else{
+                            console.log('Controllo finale warning')
+                            hideAll();
+                            $("#RetryBox").show();
+                        }
+                    }
+                    break;
+                case 10:
+                    steps.push(step);
+                    //logga(alla_fine=true, verbose=true);
+                    showEnd($,true);
+                    hideAll()
+                    $("#endBox").show();
+            }
+        }
+        
+        // Reimposto il valore precedente quando torno indietro
+        $("#btnBack").click(function(){
+            switch(MODALITA){
+                case "S100":
+                    $(".rangeInput").val(judgments[step]);
+                    $("#rangeOutput").html(judgments[step]);
+                    break;
+                case "S6":
+                    if (judgments[step]!== null){
+                        $("input[name=rel][value='" + judgments[step] + "']").prop('checked', true);
+                    }
+                    break; 
+            }
+        });
+        
+        $("#btnNext").click(function(){
+            
+                switch(MODALITA){
+                    case "S100":
+                        if(!slider[step]){
+                            $(".rangeInput").val(50);
+                        }
+                        $(".rangeInput").val(judgments[step]);
+                        if(slider[step]){
+                            $("#rangeOutput").html(judgments[step]);
+                        }else{
+                            $(".rangeInput").val(50);
+                            $("#rangeOutput").html(50);
+                        }
+                        break;
+                    case "S6":
+                        if (judgments[step]!== null){
+                            $("input[name=rel][value='" + judgments[step] + "']").prop('checked', true);
+                        }
+                        break; 
+                    }
+        });
+        
+        // Mostro Istruzioni
+        $( document ).ready(function() {
+            
+            // Split URL and Query
+            var hit_url = document.URL.split('?')[0];
+            var query = document.URL.split('?')[1];
+            // Parse the parameters from Query
+            params = [];
+            if (query != undefined) {
+                entries = query.split('&');
+                for (var i = 0; i < entries.length; i++){
+                    var entry = entries[i].split('=');
+                    params[entry[0]] = entry[1];
+                }
+            }
+            hit_id = params["hitId"];
+            assignment_id = params["assignmentId"];
+            
+            logga();
+            //console.log( "ready!" );
+            $("well").css("height: auto; display: block;"); 
+            showEnd(false);
+        });
+        
+        // Verifico se l'utente ha lasciato la pagina
+        function checkVisibility(){
+            if(document.visibilityState === "hidden" && visibility){
+                offPageInfo[step] = offPageInfo[step] + 1;
+                console.log("Numero di volte che l'utente ha lasciato la pagina: " + offPageInfo[step]);
+                visibility = false;
+            }
+            if(document.visibilityState === "visible" && !visibility){
+                visibility = true;
+            }
+            setTimeout(checkVisibility, 1000);
+        }
+    
+        // Inizio mio JS: 
+        //console.log($("#d1").val());
+        var id_unit = $("#id_unit").val()
+        console.log('Start task: '+$("#id_unit").val());
+        hideAll();
+        
+        function get_json_field(id, field){
+            var vv = $(id).val();
+            vv = vv.replace(/'/g, '"')
+            vv = JSON.parse(vv)
+            return vv[field]
+        }
+        
+        console.log('===== START =====')
+        
+        // Inizializzo array scelta labels
+        for (var i = 0; i < 8; ++i) {
+            label[i] = false;
+            slider[i] = false;
+            offPageInfo[i] = 0;
+        }
+        
+        
+        /*  prendo i doc e popolo i campi */
+        function importRemoteFile(url) {
+            var xmlhttp;
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', url, false);
+            xmlhttp.send();
+            mioStr = xmlhttp.responseText;
+            //console.log(mioStr);
+            return mioStr;
+        }
+        
+        for (i=1; i<=no_docs; i++){
+            try{
+                str_from_server = importRemoteFile("https://kevinr.s3.us-east-2.amazonaws.com/FakeNews-LaBarbera/TaskBig/" + $("#d"+i).val() + ".txt")
+                str_from_server = str_from_server.split('=++=')
+                //id_par, name, statement, speaker, job, context 
+                id_par[i]    = str_from_server[0];
+                name[i]      = str_from_server[1];
+                statement[i] = str_from_server[2];
+                speaker[i]   = str_from_server[3];
+                job[i]       = str_from_server[4];
+                context[i]   = str_from_server[5];
+                
+                console.log("Succesfully downloaded doc " + i );
+            }catch(err){
+                console.log('Issues with downloading doc '+ i);
+                
+                $("BODY").empty();
+                    cont = $("<div>").addClass("containter").html("Error. Tecnical problem with the task. Sorry for the Inconvenience.")
+                    $("BODY").append(cont)
+                    $("BODY").css("color", "black").css("background-color", "white").css("text-align", "center")
+            }
+        }
+        
+        console.log("===== INIZIO TASK =====")
+        
+        /*  inzio il task */
+        updateStep();
+
+</script>
